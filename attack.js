@@ -1,4 +1,4 @@
-const ROUTER = "router.local";
+const ROUTER = "http://router.local";
 const ENDPOINT = "https://hookb.in/XkozB9BEQ6hDYMQQEw8Z";
 
 function forwardResponse(res) {
