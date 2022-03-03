@@ -26,7 +26,7 @@ xhr.onreadystatechange = function() {
 				forwardResponse(xhr2.response);
 			}
 		}
-		xhr2.open("GET", ROUTER, true);
+		xhr2.open("GET", ROUTER + "/home.php", true);
 		xhr2.send('');
 	}
 }
