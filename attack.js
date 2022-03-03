@@ -12,9 +12,9 @@ function forwardResponse(res) {
 	fwdxhr.send(data);
 }
 
-forwardResponse("foo");
+//forwardResponse("foo");
 
-/*let xhr = new XMLHttpRequest();
+let xhr = new XMLHttpRequest();
 
 xhr.onreadystatechange = function() {
 	if (xhr.readyState === 4) {
@@ -23,4 +23,4 @@ xhr.onreadystatechange = function() {
 }
 
 xhr.open("GET", ROUTER, true);
-xhr.send('');*/
+xhr.send('');
