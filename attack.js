@@ -28,6 +28,6 @@ xhr.onreadystatechange = function() {
 
 const formParams = "username=root&pin=admin";
 
-xhr.open("POST", ROUTER, true);
+xhr.open("POST", ROUTER + "/login.php", true);
 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 xhr.send(formParams);
