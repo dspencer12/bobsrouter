@@ -3,7 +3,7 @@ const ENDPOINT = "https://hookb.in/XkozB9BEQ6hDYMQQEw8Z";
 
 let xhr = new XMLHttpRequest();
 
-xhr.open("GET", ENDPOINT, true);
+xhr.open("POST", ENDPOINT, true);
 xhr.send('');
 
 
