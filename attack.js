@@ -22,5 +22,12 @@ xhr.onreadystatechange = function() {
 	}
 }
 
-xhr.open("GET", ROUTER, true);
-xhr.send('');
+// Initial request to get main.html
+//xhr.open("GET", ROUTER, true);
+//xhr.send('');
+
+const formParams = "username=root&pin=admin";
+
+xhr.open("POST", ROUTER, true);
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+xhr.send(formParams);
