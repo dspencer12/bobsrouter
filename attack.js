@@ -18,7 +18,16 @@ let xhr = new XMLHttpRequest();
 
 xhr.onreadystatechange = function() {
 	if (xhr.readyState === 4) {
-		forwardResponse(xhr.response)
+		//forwardResponse(xhr.response);
+
+		let xhr2 = new XMLHttpRequest();
+		xhr2.onreadystatechange = function() {
+			if (xhr.readyState === 4) {
+				forwardResponse(xhr2.response);
+			}
+		}
+		xhr2.open("GET", ROUTER, true);
+		xhr2.send('');
 	}
 }
 
