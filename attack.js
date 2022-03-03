@@ -22,7 +22,7 @@ xhr.onreadystatechange = function() {
 
 		let xhr2 = new XMLHttpRequest();
 		xhr2.onreadystatechange = function() {
-			if (xhr.readyState === 4) {
+			if (xhr2.readyState === 4) {
 				forwardResponse(xhr2.response);
 			}
 		}
