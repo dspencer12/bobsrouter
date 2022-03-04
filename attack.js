@@ -9,6 +9,7 @@ function forwardResponse(req) {
 	const data = JSON.stringify({
 		"body": req.response,
 		"headers": req.getAllResponseHeaders(),
+		"responseURL": req.responseURL,
 	});
 	fwdxhr.send(data);
 }
