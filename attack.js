@@ -33,7 +33,7 @@ xhr.onreadystatechange = function() {
 			}
 		}
 
-		xhr2.open("GET", ROUTER + "/home.php?action=edit&PHPSESSID=" + sessionId, true);
+		xhr2.open("GET", ROUTER + "/home.php?action=login&PHPSESSID=" + sessionId, true);
 		xhr2.send('');
 	}
 }
